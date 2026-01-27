@@ -1,3 +1,7 @@
+#lambda , pode conter closure tbm
+
+
+
 products = [
     {"name": "Keyboard", "price": 100, "tax": 0.10},
     {"name": "Mouse", "price": 50, "tax": 0.05},

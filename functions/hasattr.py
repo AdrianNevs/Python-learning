@@ -1,3 +1,5 @@
+# aprendizado com hasattr e getattr
+
 #sem if ternario
 str1 = 'luz'
 method_test = 'upper1'

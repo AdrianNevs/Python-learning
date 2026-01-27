@@ -1,17 +1,4 @@
-import os
 lista = []
-
-def error_dividir_zero(x , y):
-    
-    if isinstance (x,str) or isinstance(y,str):
-        raise TypeError('str caceta nao e int') #cria proprio erro e renomeia
-    else:
-        if x  == 0 or y == 0:
-            raise ZeroDivisionError('nao se divide 0')
-        
-error_dividir_zero(10 , 0)
-
-
 
 try:
     x = 10
@@ -60,7 +47,6 @@ while True:
             except Exception:
                 print('Erro desconhecido')
     elif 'l' == Peso:
-        os.system('cls')
         
         if len(lista) == 0:
             print(f'\n==nada para listar==\n')

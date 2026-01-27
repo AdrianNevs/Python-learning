@@ -30,7 +30,6 @@ method_user = input('Digite metado deseja aplicar').lower()
 print(apply_method(str1,method_test))
 print(apply_method(value_user,method_user))
 
-exit()
 #com closure
 
 value = 'luz'

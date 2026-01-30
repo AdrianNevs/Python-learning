@@ -1,12 +1,11 @@
 # Crie uma lambda que receba uma lista de números e retorne uma lista apenas com os números ímpares.
 
 impares = lambda n: n % 2 != 0
-numbers = [n for n in range(10)]
+numbers = [n for n in range(10) if impares(n)]
+print(numbers)
 
-for values in numbers:
-    if impares(values):
-        print(values, 'impar')
 
+ 
 
 # Crie uma lambda que receba dois números e retorne o menor deles.
 # simples e facil

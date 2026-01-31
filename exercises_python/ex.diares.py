@@ -38,3 +38,27 @@ def upper_case(list_names):
 
 names = ['adrian','moises','lorena']
 print(upper_case(names))
+
+
+# Crie uma única expressão lambda que:
+
+# Receba a lista employees
+# Filtre apenas os funcionários ativos
+# Aplique 10% de aumento no salário deles
+# Retorne uma nova lista de dicionários
+# Ordene o resultado pelo salário crescente
+# Não modifique a lista original
+
+employees = [
+    {"name": "Ana", "salary": 3000, "active": True},
+    {"name": "Carlos", "salary": 2500, "active": False},
+    {"name": "Bianca", "salary": 4000, "active": True},
+    {"name": "Daniel", "salary": 2000, "active": True},
+] 
+
+employe_aument = sorted([{**employe ,'salary':employe['salary'] + (employe['salary'] * (10 / 100))}
+                         for employe in employees if employe['active']],
+                        key=lambda salary: salary['salary'])
+
+print(*employe_aument,sep='\n')
+

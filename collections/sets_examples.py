@@ -1,6 +1,6 @@
 #set em pytthon 
-
-exit()
+#Implemente uma função que receba uma lista de números inteiros e retorne o primeiro número duplicado,
+# considerando a ordem da segunda ocorrência.
 def duplicado_number(lista_inteiros):
     s1 = set()
     for i,numero in enumerate(lista_inteiros):
@@ -29,7 +29,7 @@ for lista in lista_de_listas_de_inteiros:
     print(f'{lista} {duplicado_number(lista)}')
 
         
-
+#teste do uso do set in python
 def creat_set():
     s1_ = set()
     def add_value(value):
@@ -44,7 +44,7 @@ print(value_set(3))
 print(value_set(3))
 
 
-
+#criando uma intercessão
 
 def create_intersection(s1):
     def intersection(s2):
@@ -57,7 +57,7 @@ set_1 = create_intersection({1,2,3,4,5})
 print(set_1({2,}))
 
 
-
+# retona apenas {adrian,lorena} elimina os demais, set nao repete
 def block_user():
     s1 = set()
 
@@ -70,9 +70,11 @@ def block_user():
 block = block_user()
 list_user = ['adrian','adrian','lorena','adrian','adrian','lorena']
 for name in list_user:
-    
     print(block(name))
 
+
+#retona s1 = {3} , o laço apaga value 1,2 restando apenas {3} para o set
+#set nao repete values
 
 li = [1,2,3,3,3,3,3,1,2]
 sets = list(set(li))
@@ -81,10 +83,12 @@ s1 = set()
 for value in li:
     s1.add(value)
     if value in [1,2]:
-        s1.discard(value)
+        s1.discard(value) # remolve valores do set 1,2 
 print(s1)
-s2
 
+# intersection , uniao , diferença
+s1 = {1,2,3}
+s2 = {3,4,5}
 s3 = s1 & s2
 s3 = s1 | s2
 s3 = s2 - s1

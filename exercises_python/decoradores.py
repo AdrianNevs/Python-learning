@@ -1,4 +1,6 @@
 # aprendendo sobre decoradores em python
+# primeiro decorador com paramentro name caso nao passe valor vai retornar None
+# segundo Decorator que valida se todos os argumentos posicionais são int or float
 # com o uso do @
 
 def is_int_float(param): #verificar se contem str
@@ -24,7 +26,7 @@ tax_calculate = tax_value(400,10)
 print(tax_calculate)
 
 #///////////////=====================================================\\\\\\\\\\\\\\\\\\\\\\\
-#decorador soma
+# Decorator que valida se todos os argumentos posicionais são int,float
 #funcao de somar valores usando decorador 
 def valid_value(param): #funcao para validar se nao contem str
     if not isinstance(param,(int,float)):

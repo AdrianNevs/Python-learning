@@ -43,3 +43,11 @@ def zipper(cities,estado):
 
 unir_city_estado = zipper(city_list,estado_list)
 print(*unir_city_estado)
+
+#/////////=====================================\\\\\\\\\
+#maneira mais simples
+#uso de if ternario e list comprehension
+def zipper(city_l1, estado_l2):
+    size_list = len(city_l1) if len(city_l1) < len(estado_l2) else len(estado_l2) # ou size_list = min(len(city_l1),len(estado_l2))
+    return  [(city_l1[i],estado_l2[i]) for i in range(size_list)]
+print(zipper(city_list,estado_list))

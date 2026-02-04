@@ -62,3 +62,33 @@ employe_aument = sorted([{**employe ,'salary':employe['salary'] + (employe['sala
 
 print(*employe_aument,sep='\n')
 
+# Exercício:
+# Criar uma função usando lambda e closure que retorne outra função.
+# A função retornada deve multiplicar um valor por um fator fixo.
+
+multiply = (lambda factor: lambda value: factor* value)
+multiply_two = multiply(2)
+multiply_three = multiply(3)
+
+print(multiply_two(5))
+print(multiply_three(5))
+
+# Exercício:
+# Criar uma lista com apenas os produtos ativos.
+# Aplicar 10% de desconto no preço de cada produto.
+# Criar um novo dicionário contendo apenas o nome e o preço final.
+# Utilizar list comprehension (sem for tradicional).
+
+products = [
+    {"name": "Keyboard", "price": 100, "active": True},
+    {"name": "Mouse", "price": 50, "active": False},
+    {"name": "Monitor", "price": 900, "active": True},
+    {"name": "USB Cable", "price": 30, "active": True},
+]
+
+discount = 10 
+
+list_active = [{'name':product['name'] , 'final_price':product['price'] - (product['price'] * (discount / 100))}
+for product in products if product['active']]
+
+print(*list_active,sep='\n')

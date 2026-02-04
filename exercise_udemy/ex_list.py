@@ -9,7 +9,7 @@ state_list = ['BA', 'SP','MG','RJ']
 # Resultado
 # [('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG')]
 
-def zipper(citys): #usando closure
+def zipper(cities): #usando closure
     def unir(state):
         new_list = []
         for i,city in enumerate(citys):

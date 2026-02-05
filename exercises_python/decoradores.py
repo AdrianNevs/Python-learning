@@ -99,3 +99,34 @@ reverse_text = validate_string_params(reverse_string)
 print(reverse_text('adr'))
 upper_text = validate_string_params(upper_str)
 print(upper_text('adrian'))
+
+#///////////////=====================================================\\\\\\\\\\\\\\\\\\\\\\\
+#///////////////=====================================================\\\\\\\\\\\\\\\\\\\\\\\
+
+def is_int_float(list_value):
+    for line in list_value:
+        for value in line:
+            if isinstance(value,str):
+                raise ValueError('Passou uma str')
+    
+def decorador(func):
+    def interna(*args,**kwargs):
+        for value in args:
+            is_int_float(value)
+        result = func(*args,**kwargs)
+        return result
+    return interna
+        
+@decorador
+def sum_values(list_values):
+    result = 0
+    for line in list_values:
+        for value in line:
+            result += int(value)
+    return result
+        
+
+matriz = [[32, 'a'], [12, 32]]
+print(matriz)
+calculate = sum_values(matriz)
+print(calculate)

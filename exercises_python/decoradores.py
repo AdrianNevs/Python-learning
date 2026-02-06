@@ -130,3 +130,24 @@ matriz = [[32, 'a'], [12, 32]]
 print(matriz)
 calculate = sum_values(matriz)
 print(calculate)
+
+#///////////////=====================================================\\\\\\\\\\\\\\\\\\\\\\\
+#///////////////=====================================================\\\\\\\\\\\\\\\\\\\\\\\
+# Estudo prático de decorators usando kwargs e functools.wraps
+# aprendendo a copiar metadados do decorador com functools.wraps
+
+from functools import wraps # preserva os metadados da função original
+
+def decorar(func):
+    @wraps(func) # copia os metadados da func original (tax)
+    def wrapper(*values,**keysvalues):
+        print(wrapper.__name__) # retorna 'taxa' porque @wraps substitui os metadados do wrapper
+        print(keysvalues)
+        return func(*values,**keysvalues) # retorna a funcao(tax) , e retorna o valor da funcao tax = 200
+    return wrapper
+
+@decorar  
+def taxa(tax,value): # ===metadados da funcao===
+    return tax * value # dados de execução da funcao 
+
+print(taxa(tax=10,value=20))

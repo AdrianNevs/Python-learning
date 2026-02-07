@@ -1,7 +1,7 @@
 # aprendendo sombre itertools  
 # exercicios feitos sem funcao pronta, para aprender logica de programação
 # aprendendo a utilizar a biblioteca itertools 
-from itertools import combinations, permutations, product
+from itertools import combinations, permutations, product, groupby
 pessoas = [
     'João', 'Joana', 'Luiz', 'Letícia',
 ]
@@ -38,3 +38,29 @@ print(list(combinations(pessoas,2))) #lista com cobinacao sem repeticao
 print(list(permutations(pessoas,2))) #lista com todas combinacoes
 # combinacao de duas listas 
 print(list(product(pessoas,camisa)))
+
+#==================/////////////\\\\\\\\\\\\=============================
+#==================/////////////\\\\\\\\\\\\=============================
+
+
+student_list = [
+    {'nome': 'Luiz', 'nota': 'A'},
+    {'nome': 'Letícia', 'nota': 'B'},
+    {'nome': 'Fabrício', 'nota': 'A'},
+    {'nome': 'Rosemary', 'nota': 'C'},
+    {'nome': 'Joana', 'nota': 'D'},
+    {'nome': 'João', 'nota': 'A'},
+    {'nome': 'Eduardo', 'nota': 'B'},
+    {'nome': 'André', 'nota': 'A'},
+    {'nome': 'Anderson', 'nota': 'C'},]
+
+def order_list(student):
+    return student['nota']
+
+order_student = sorted(student_list,key=order_list) # ordernar a lista por nota
+groups = groupby(order_student, key=order_list)
+
+for key,group in groups:
+    print(key) 
+    for student in group:
+        print(student)

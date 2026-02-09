@@ -28,6 +28,6 @@ def greeting(msg):
     new_msg = f'{msg} Good morning'
     return new_msg
 
-greeting = list(map(greeting,list_name))
-print(*greeting,sep='\n')
+greeting_list = list(map(greeting,list_name))
+print(*greeting_list,sep='\n')
 

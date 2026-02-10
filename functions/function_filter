@@ -7,7 +7,7 @@ numbers_y = range(25)
 filter_price = filter(lambda p:p['P'] > 100,prices) # filtra apenas preços > 100 
 print(list(filter_price))
 
-# simulando taxas e filtrar valores se entrariam > 100
+# simulando taxas e filtrar valores se entrariam > 100 .
 simular_tax = filter(lambda p: p['P'] * 1.1 > 100, prices)
 print(list(simular_tax))
 

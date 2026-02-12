@@ -4,9 +4,6 @@ impares = lambda n: n % 2 != 0
 numbers = [n for n in range(10) if impares(n)]
 print(numbers)
 
-
- 
-
 # Crie uma lambda que receba dois números e retorne o menor deles.
 # simples e facil
 larger_value = lambda x, y: min(x,y)
@@ -39,6 +36,9 @@ def upper_case(list_names):
 names = ['adrian','moises','lorena']
 print(upper_case(names))
 
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
 
 # Crie uma única expressão lambda que:
 
@@ -62,7 +62,11 @@ employe_aument = sorted([{**employe ,'salary':employe['salary'] + (employe['sala
 
 print(*employe_aument,sep='\n')
 
-# Exercício:
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+
+# Exercício 1:
 # Criar uma função usando lambda e closure que retorne outra função.
 # A função retornada deve multiplicar um valor por um fator fixo.
 
@@ -73,7 +77,7 @@ multiply_three = multiply(3)
 print(multiply_two(5))
 print(multiply_three(5))
 
-# Exercício:
+# Exercício 2:
 # Criar uma lista com apenas os produtos ativos.
 # Aplicar 10% de desconto no preço de cada produto.
 # Criar um novo dicionário contendo apenas o nome e o preço final.
@@ -92,3 +96,50 @@ list_active = [{'name':product['name'] , 'final_price':product['price'] - (produ
 for product in products if product['active']]
 
 print(*list_active,sep='\n')
+
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+
+# ==Exercício 1==
+# Crie uma função que receba uma lista de nomes
+# e retorne um dicionário agrupando os nomes
+# pela primeira letra.
+user_names = ['adrian','moises','gabriel','andersson','limeira']
+
+def creat_order_name(list_name): 
+    dic_order = {}
+    for name in list_name:
+        first_letter = name[0]
+        if first_letter in dic_order:
+            dic_order[first_letter].append(name)
+        else:
+            dic_order[first_letter] =  [name]
+    return dic_order
+
+print(creat_order_name(user_names))
+
+# ==Exercício 2==
+# Dada uma lista de números,
+# crie uma nova lista contendo apenas
+# os números pares elevados ao quadrado,
+# usando list comprehension.
+
+numbers = [10, 15, 20, 25, 30, 35, 40]
+
+square_number = [number**2 for number in numbers if number % 2 == 0]
+print(square_number)
+
+
+# ==Exercício 3==
+# Dada uma lista de palavras,
+# ordene usando sorted():
+# 1) Pela última letra
+# 2) Em caso de empate, pelo tamanho da palavra
+
+words = ["banana", "apple", "kiwi", "grape","bananana"]
+mino = len(min(words))
+words_order = sorted(words, key=lambda l:(l[-1],len(l)))
+print(*words_order,sep='\n')
+
+

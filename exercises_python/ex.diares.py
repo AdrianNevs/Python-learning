@@ -142,4 +142,67 @@ mino = len(min(words))
 words_order = sorted(words, key=lambda l:(l[-1],len(l)))
 print(*words_order,sep='\n')
 
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+
+# exercicio 1
+# Crie uma função que:
+# receba uma lista de palavras
+# retorne um dicionário onde:
+# a chave é o tamanho da palavra
+# o valor é uma lista com palavras daquele tamanho
+
+def size_words(words):
+    dic_words = {}
+    for word in words:
+        size_letter = len(word)
+        if size_letter in dic_words:
+            dic_words[size_letter].append(word)
+        else:
+            dic_words[size_letter] = [word]
+    return dic_words
+words_list = ["python", "java", "c", "ruby", "go"]
+print(size_words(words_list))
+
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+# exercicio 2
+# Crie uma função que:
+# receba uma frase (string)
+# conte quantas vezes cada letra aparece
+# ignore espaços
+# ignore maiúsculo/minúsculo ("A" == "a")
+
+
+def count_letter(text):
+    dic_count = {}
+    for letter in text.replace(" ", "").lower():
+        if letter in dic_count:
+            continue
+        dic_count[letter] = text.count(letter)
+    return dic_count
+
+text = "Hello World"
+print(count_letter(text))
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+# exercicio 3
+# Crie uma função que:
+# calcule a média de cada aluno
+# retorne uma lista de tuplas:
+# ordenada da maior média para menor.
+
+students = {
+    "Ana": [8, 7, 9],
+    "Carlos": [5, 6, 7],
+    "Joao": [10, 9, 8]
+}
+
+def mean_student(list_studant):
+    return [(key,(sum(value) / len(value))) for key,value in list_studant.items()]
+
+ordered_students = sorted(mean_student(students), key=lambda student:student[1], reverse=True)
+print(*ordered_students,sep='\n')
+
+
 

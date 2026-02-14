@@ -205,4 +205,21 @@ ordered_students = sorted(mean_student(students), key=lambda student:student[1],
 print(*ordered_students,sep='\n')
 
 
+#//////============================================\\\\\\\\\
+#//////============================================\\\\\\\\\
+#contar quatas vezes as palavras aparecem
+frase = "python é legal python é poderoso".split()
+def count_frase(frase):
+    dicionario = {}
+    for msg in frase:
+        if msg in dicionario:
+            dicionario[msg] += 1
+        else:
+            dicionario[msg] = 1
+    return dicionario
+
+print(count_frase(frase))
+
+
+
 

@@ -95,3 +95,18 @@ def larger_value(accumulate,dic_products):
 
 larger = reduce(larger_value,products)
 print(larger)
+
+
+#Faça um programa que leia números inteiros m e n e os elementos de uma matriz A de números 
+#inteiros de dimensão m x n e conte o número de elementos que são iguais a zero utilizando reduce
+
+m = int(input('Informe a quantidade de linhas (m): '))
+n = int(input('Informe a quantidade de colunas (n): '))
+matriz_numbers = [[int(input(f'Digite o elemento [{i}][{j}]: ')) for j in range(n)] for i in range(m)] # Criação da matriz List Comprehension
+
+def count_zero(accumulate,matriz):
+    zero = matriz.count(0)
+    return accumulate + zero
+    
+reduce_zero = reduce(count_zero,matriz_numbers,0)
+print('Quantidade de zeros',reduce_zero)

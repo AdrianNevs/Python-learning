@@ -110,3 +110,20 @@ def count_zero(accumulate,matriz):
     
 reduce_zero = reduce(count_zero,matriz_numbers,0)
 print('Quantidade de zeros',reduce_zero)
+
+#/////////////=====================================\\\\\\\\\\\\\\\\
+#/////////////=====================================\\\\\\\\\\\\\\\\
+# line_matriz pega cada linha da matriz.
+# acc é o acumulador geral (contador total principal), iniciado em 0.
+# Para cada linha, o reduce interno conta quantos valores iguais a 1 existem.
+# value_line representa cada elemento dentro da linha atual.
+# zero_count é o acumulador da linha, responsável por somar os valores encontrados.
+# O operador ternário adiciona 1 ao contador quando o valor é 1,
+# caso contrário adiciona 0, mantendo o valor atual.
+# O resultado do reduce interno (quantidade de 1 na linha)
+# é somado ao acc no reduce externo.
+# No final, definimos a matriz que será percorrida e o valor inicial do acumulador.
+# imagine como se primeiro reduce fosse um for i ,
+# eo segundo fosse reduce fosse o for j 
+count_one = reduce(lambda acc,line_matriz:acc + reduce(lambda zero_count,value_line: zero_count + (1 if value_line == 1 else 0),line_matriz,0),matriz_numbers,0) 
+print('quatidade de 1 = ',count_one)

@@ -234,7 +234,7 @@ students = [
 ]
 
 
-list_result = [{'name':item['name'] , 'Aproved':True if item['grade'] >= 6 else False ,'grade':item['grade']} for item in students]
+list_result = [{'name':item['name'] , 'Approved':True if item['grade'] >= 6 else False ,'grade':item['grade']} for item in students]
 ordered_students = sorted(list_result,key=lambda g:g['grade'])
 print(*ordered_students,sep='\n')
 
@@ -242,10 +242,10 @@ print(*ordered_students,sep='\n')
 #usando closure unindo palavras
 #validando com o uso do isistance
 #aceita apenas str
-union_phrase = (lambda phrase: lambda phrase2:
-             phrase + phrase2 if isinstance(phrase2,str) and isinstance(phrase,str)
-             else 'Passe uma str' )('oi')
-print(union_phrase('Bom dia'))
+union_phrase = (lambda phrase_fixed: lambda phrase2:
+             phrase_fixed + ' ' + phrase2 if isinstance(phrase2,str)
+             else 'Passe uma str' )('Oi')
+print(union_phrase('Bom dia')) # caso use um int, float ou bool exibirá = 'Passe uma str'
 
 
 
